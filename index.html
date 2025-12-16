@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Arpan Bera | Software Developer Portfolio</title>
+    <meta name="description"
+        content="Software Developer specializing in Java, JavaScript, php and cloud architecture. View my portfolio of scalable web applications and technical writing.">
+    <meta name="keywords"
+        content="Full Stack Developer, Software Engineer, java Developer, php, Web Development, Portfolio, Arpan Bera">
+    <meta name="author" content="Arpan Bera">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alexdev.com/"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alexdev.com/">
+    <meta property="og:title" content="Arpan Bera | Software Developer">
+    <meta property="og:description"
+        content="Building digital experiences that matter. Explore my projects, experience, and technical blog.">
+    <meta property="og:image" content="https://alexdev.com/og-image.jpg">
+    <!-- Replace with a link to a screenshot of your site -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alexdev.com/">
+    <meta property="twitter:title" content="Arpan Bera | Software Developer">
+    <meta property="twitter:description"
+        content="Building digital experiences that matter. Explore my projects, experience, and technical blog.">
+    <meta property="twitter:image" content="https://alexdev.com/og-image.jpg">
+
+    <!-- Favicon (Placeholder) -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arpan Bera ",
+      "url": "https://alexdev.com",
+      "image": "https://alexdev.com/profile.jpg",
+      "jobTitle": "Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Vitwo"
+      },
+      "sameAs": [
+        "https://github.com/alexdev",
+        "https://linkedin.com/in/alexdev",
+        "https://twitter.com/alexdev"
+      ],
+      "knowsAbout": ["JavaScript", "Java", "Php", "AWS", "Web Development"]
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        card: 'rgba(255, 255, 255, 0.9)',
+                        'card-dark': 'rgba(15, 23, 42, 0.6)',
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'gradient': 'gradient 8s linear infinite',
+                        'blink': 'blink 1s step-end infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Dot Pattern Background */
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .dark .bg-grid-pattern {
+            background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Reveal for Children */
+        .reveal-stagger .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-stagger.active .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* 3D Tilt Card Base */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            transform-style: preserve-3d;
+            /* Important for tilt */
+            transition: transform 0.1s ease-out;
+            /* Smooth movement, fast return */
+        }
+
+        .dark .glass-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Magnetic Button */
+        .magnetic {
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-900 dark:bg-darker dark:text-slate-100 transition-colors duration-300 font-sans selection:bg-primary selection:text-white text-sm sm:text-base">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-slate-200/50 dark:border-slate-800/50 glass transition-all duration-300"
+        aria-label="Main Navigation">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse group magnetic" aria-label="Home">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-mono font-bold text-base shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+                    &lt;/&gt;</div>
+                <span class="self-center text-lg font-bold whitespace-nowrap tracking-tight">Arpan<span
+                        class="text-primary"></span></span>
+            </a>
+
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center gap-4">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" type="button" aria-label="Toggle Dark Mode"
+                    class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2 transition-colors">
+                    <i data-lucide="moon" class="hidden dark:block w-5 h-5"></i>
+                    <i data-lucide="sun" class="block dark:hidden w-5 h-5"></i>
+                </button>
+
+                <a href="#contact"
+                    class="magnetic hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-center text-white bg-gradient-to-r from-primary to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40">
+                    Hire Me
+                </a>
+
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-slate-500 rounded-lg md:hidden hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700 focus:outline-none"
+                    aria-controls="navbar-sticky" aria-expanded="false" id="menu-btn" aria-label="Open Menu">
+                    <span class="sr-only">Open main menu</span>
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 text-sm">
+                    <li><a href="#home"
+                            class="block py-2 px-3 text-slate-700 rounded hover:text-primary md:p-0 dark:text-slate-300 dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Home</a>
+                    </li>
+                    <li><a href="#about"
+                            class="block py-2 px-3 text-slate-700 rounded hover:text-primary md:p-0 dark:text-slate-300 dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">About</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="block py-2 px-3 text-slate-700 rounded hover:text-primary md:p-0 dark:text-slate-300 dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Projects</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="block py-2 px-3 text-slate-700 rounded hover:text-primary md:p-0 dark:text-slate-300 dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Experience</a>
+                    </li>
+                    <li><a href="#blog"
+                            class="block py-2 px-3 text-slate-700 rounded hover:text-primary md:p-0 dark:text-slate-300 dark:hover:text-white transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-primary after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-white/95 dark:bg-darker/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden pt-20 px-6 flex flex-col h-screen">
+        <ul class="space-y-5 text-xl font-bold tracking-tight">
+            <li><a href="#home"
+                    class="mobile-link block text-slate-900 dark:text-white hover:text-primary transition-colors">Home</a>
+            </li>
+            <li><a href="#about"
+                    class="mobile-link block text-slate-900 dark:text-white hover:text-primary transition-colors">About</a>
+            </li>
+            <li><a href="#projects"
+                    class="mobile-link block text-slate-900 dark:text-white hover:text-primary transition-colors">Projects</a>
+            </li>
+            <li><a href="#experience"
+                    class="mobile-link block text-slate-900 dark:text-white hover:text-primary transition-colors">Experience</a>
+            </li>
+            <li><a href="#blog"
+                    class="mobile-link block text-slate-900 dark:text-white hover:text-primary transition-colors">Blog</a>
+            </li>
+            <li class="pt-6 border-t border-slate-200 dark:border-slate-800"><a href="#contact"
+                    class="mobile-link block text-primary">Contact Me</a></li>
+        </ul>
+        <div class="mt-auto mb-8 text-slate-500 text-xs">
+            &copy; 2025 ArpanBera.
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper for Semantic SEO -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-[0.4] dark:opacity-[0.1] z-0 pointer-events-none">
+            </div>
+            <!-- Mouse Parallax Blobs -->
+            <div id="blob-1"
+                class="absolute top-0 -left-4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob dark:bg-purple-900 dark:mix-blend-screen dark:opacity-20 transition-transform duration-100 ease-out">
+            </div>
+            <div id="blob-2"
+                class="absolute top-0 -right-4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 dark:bg-blue-900 dark:mix-blend-screen dark:opacity-20 transition-transform duration-100 ease-out">
+            </div>
+            <div id="blob-3"
+                class="absolute -bottom-32 left-20 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000 dark:bg-pink-900 dark:mix-blend-screen dark:opacity-20 transition-transform duration-100 ease-out">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="reveal">
+                    <!-- <span class="inline-flex items-center py-1 px-3 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 text-[10px] sm:text-xs font-semibold mb-6 border border-blue-200 dark:border-blue-800 shadow-sm">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
+                        Available for freelance work
+                    </span> -->
+                    <h1
+                        class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                        Building digital <br class="hidden md:block" />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-indigo-600 animate-gradient bg-[length:200%_auto]">experiences
+                            that matter.</span>
+                    </h1>
+
+                    <!-- Typewriter Container -->
+                    <p
+                        class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed h-8">
+                        I'm a <span id="typewriter" class="font-semibold text-slate-900 dark:text-white"></span><span
+                            class="animate-blink">|</span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#projects"
+                            class="magnetic group relative px-6 py-3 text-sm font-medium text-white bg-slate-900 rounded-lg overflow-hidden transition-all hover:bg-slate-800 focus:ring-4 focus:ring-slate-300 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 dark:focus:ring-slate-800 shadow-xl shadow-slate-900/20 dark:shadow-none">
+                            <span class="relative z-10">View Featured Work</span>
+                            <div
+                                class="absolute inset-0 h-full w-full scale-0 rounded-lg transition-all duration-300 group-hover:scale-100 group-hover:bg-slate-800/50">
+                            </div>
+                        </a>
+                        <a href="https://github.com/arpan9932" target="_blank" rel="noopener noreferrer"
+                            class="magnetic px-6 py-3 text-sm font-medium text-slate-900 bg-white/50 backdrop-blur-sm border border-slate-200 rounded-lg hover:bg-white hover:text-primary focus:z-10 focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 dark:bg-slate-800/50 dark:text-slate-300 dark:border-slate-700 dark:hover:text-white dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                    </div>
+
+                    <div class="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800/50">
+                        <p
+                            class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-5 uppercase tracking-wider">
+                            Trusted Technology Stack</p>
+                        <div
+                            class="flex flex-wrap justify-center gap-8 md:gap-10 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                            <!-- Updated Stack Icons -->
+                            <div
+                                class="flex flex-col items-center gap-1.5 group hover:-translate-y-1 transition-transform">
+                                <i data-lucide="coffee" class="w-6 h-6 text-yellow-700"></i>
+                                <span class="text-[10px] sm:text-xs font-semibold">Java</span>
+                            </div>
+
+                            <div
+                                class="flex flex-col items-center gap-1.5 group hover:-translate-y-1 transition-transform">
+                                <i data-lucide="file-code" class="w-6 h-6 text-indigo-600"></i>
+                                <span class="text-[10px] sm:text-xs font-semibold">PHP</span>
+                            </div>
+
+                            <div
+                                class="flex flex-col items-center gap-1.5 group hover:-translate-y-1 transition-transform">
+                                <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
+                                <span class="text-[10px] sm:text-xs font-semibold">SQL</span>
+                            </div>
+
+                            <div
+                                class="flex flex-col items-center gap-1.5 group hover:-translate-y-1 transition-transform">
+                                <i data-lucide="cloud" class="w-6 h-6 text-orange-500"></i>
+                                <span class="text-[10px] sm:text-xs font-semibold">AWS</span>
+                            </div>
+
+                            <div
+                                class="flex flex-col items-center gap-1.5 group hover:-translate-y-1 transition-transform">
+                                <i data-lucide="square-code" class="w-6 h-6 text-yellow-500"></i>
+                                <span class="text-[10px] sm:text-xs font-semibold">JavaScript</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about"
+            class="py-20 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal order-2 md:order-1">
+                        <div class="relative group max-w-sm mx-auto">
+                            <div
+                                class="absolute -inset-2 bg-gradient-to-r from-primary via-purple-500 to-secondary rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500">
+                            </div>
+                            <!-- Profile Image -->
+                            <div
+                                class="relative w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden shadow-2xl flex items-center justify-center border border-slate-200 dark:border-slate-700 glass-card">
+                                <div class="text-center">
+                                    <!-- <i data-lucide="user-circle-2"
+                                        class="w-32 h-32 text-slate-300 dark:text-slate-600 mx-auto mb-4"></i> -->
+                                    <p class="text-xs text-slate-400 font-mono" style="max-width:91%"><img
+                                            src="images/image1.png" alt=""></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal delay-200 order-1 md:order-2">
+                        <h2
+                            class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl mb-5 flex items-center gap-3">
+                            About Me
+                            <div class="h-1 w-16 bg-primary rounded-full mt-1"></div>
+                        </h2>
+                        <p class="text-base text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">
+                            Hello! My name is Arpan Bera, and I enjoy creating things that live on the internet. My
+                            journey in software development
+                            began with a curiosity for how applications work behind the scenes — and that curiosity
+                            quickly grew into a passion
+                            for building real-world systems.
+                        </p>
+
+                        <p class="text-base text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+                            Today, I’m working as a <span class="text-primary font-medium">Software Developer</span> at
+                            <span class="text-primary font-medium">Vitwo</span>, where I contribute to both
+                            <span class="text-primary font-medium">ERP software</span> and
+                            <span class="text-primary font-medium">HRMS solutions</span>. My main focus is
+                            on <span class="text-primary font-medium">backend development</span>, designing efficient,
+                            scalable systems that power seamless user experiences.
+                        </p>
+
+                        <div class="space-y-3 reveal-stagger">
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                                Technical Skills</h3>
+                            <div class="flex flex-wrap gap-2" id="skills-container">
+                                <!-- Skills injected via JS for staggering -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-slate-50 dark:bg-darker transition-colors duration-300 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">Featured
+                        Projects</h2>
+                    <p class="mt-3 text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">A selection of
+                        projects where I've leveraged modern technologies to solve real-world problems.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-xl overflow-hidden reveal group hover:border-primary/50 transition-colors tilt-card"
+                        data-tilt>
+                        <div class="h-56 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/30 transition-colors z-10">
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-slate-400 bg-slate-800 group-hover:scale-105 transition-transform duration-700">
+                                <img src="images/image2.png" alt="" style="height: 100%;width: 100%;">
+                                <!-- <i data-lucide="bar-chart-2" class="w-16 h-16 opacity-50"></i> -->
+                            </div>
+                            <div class="absolute bottom-3 left-3 z-20">
+                                <h3 class="text-xl font-bold text-white drop-shadow-md">Apna_Khata</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs sm:text-sm h-16 overflow-hidden">
+                                    A website for track your daily expenses and alaysis your spendings.
+                                </p>
+                                <div class="flex gap-3 shrink-0 ml-4">
+                                    <a href="https://github.com/arpan9932/Apna_Khata.git"
+                                        class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="View Source on GitHub"><i data-lucide="github"
+                                            class="w-4 h-4"></i></a>
+                                    <!-- <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="Visit Live Site"><i data-lucide="external-link"
+                                            class="w-4 h-4"></i></a> -->
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Php</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Jquery</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Mysql</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-xl overflow-hidden reveal delay-100 group hover:border-primary/50 transition-colors tilt-card"
+                        data-tilt>
+                        <div class="h-56 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/30 transition-colors z-10">
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-slate-400 bg-slate-800 group-hover:scale-105 transition-transform duration-700">
+                                <img src="images/image3.png" alt="" style="height: 100%;width: 100%;">
+                                <!-- <i data-lucide="shopping-bag" class="w-16 h-16 opacity-50"></i> -->
+                            </div>
+                            <div class="absolute bottom-3 left-3 z-20">
+                                <h3 class="text-xl font-bold text-white drop-shadow-md">Techtrek </h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs sm:text-sm h-16 overflow-hidden">
+                                    A technical blog website.
+                                </p>
+                                <div class="flex gap-3 shrink-0 ml-4">
+                                    <a href="https://github.com/arpan9932/Techtrek.git"
+                                        class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="View Source on GitHub"><i data-lucide="github"
+                                            class="w-4 h-4"></i></a>
+                                    <!-- <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="Visit Live Site"><i data-lucide="external-link"
+                                            class="w-4 h-4"></i></a> -->
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Laravel</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Javascript</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Mysql</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-card rounded-xl overflow-hidden reveal delay-200 group hover:border-primary/50 transition-colors tilt-card"
+                        data-tilt>
+                        <div class="h-56 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/30 transition-colors z-10">
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-slate-400 bg-slate-800 group-hover:scale-105 transition-transform duration-700">
+                                <i data-lucide="sparkles" class="w-16 h-16 opacity-50"></i>
+                            </div>
+                            <div class="absolute bottom-3 left-3 z-20">
+                                <h3 class="text-xl font-bold text-white drop-shadow-md">E-Commerce API</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs sm:text-sm h-16 overflow-hidden">
+                                    E-Commerce platform with cart and payment gateway integration..
+                                </p>
+                                <div class="flex gap-3 shrink-0 ml-4">
+                                    <a href="https://github.com/arpan9932/E-Commerce-API.git"
+                                        class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="View Source on GitHub"><i data-lucide="github"
+                                            class="w-4 h-4"></i></a>
+                                    <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="Visit Live Site"><i data-lucide="external-link"
+                                            class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">JAVA</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">REST
+                                    API</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="glass-card rounded-xl overflow-hidden reveal delay-300 group hover:border-primary/50 transition-colors tilt-card"
+                        data-tilt>
+                        <div class="h-56 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-slate-900/50 group-hover:bg-slate-900/30 transition-colors z-10">
+                            </div>
+                            <div
+                                class="w-full h-full flex items-center justify-center text-slate-400 bg-slate-800 group-hover:scale-105 transition-transform duration-700">
+                                <i data-lucide="kanban-square" class="w-16 h-16 opacity-50"></i>
+                            </div>
+                            <div class="absolute bottom-3 left-3 z-20">
+                                <h3 class="text-xl font-bold text-white drop-shadow-md">TaskFlow Pro</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <p
+                                    class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs sm:text-sm h-16 overflow-hidden">
+                                    A collaborative project management tool featuring drag-and-drop Kanban boards,
+                                    real-time team chat, and file sharing. Built to handle complex team workflows with
+                                    zero latency.
+                                </p>
+                                <div class="flex gap-3 shrink-0 ml-4">
+                                    <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="View Source on GitHub"><i data-lucide="github"
+                                            class="w-4 h-4"></i></a>
+                                    <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                        aria-label="Visit Live Site"><i data-lucide="external-link"
+                                            class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Vue.js</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Socket.io</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Mongo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="#"
+                        class="magnetic inline-flex items-center px-5 py-2.5 text-xs font-semibold text-slate-900 bg-transparent border border-slate-900 rounded-lg hover:bg-slate-900 hover:text-white dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-slate-900 transition-all">
+                        View Full Project Archive <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Blog Sections -->
+        <section id="experience" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2
+                    class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl mb-10 text-center reveal">
+                    Professional Experience</h2>
+
+                <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 md:ml-6 space-y-10 pb-4">
+                    <!-- Job 1 -->
+                    <div class="relative pl-8 md:pl-12 reveal">
+                        <div
+                            class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-primary ring-4 ring-white dark:ring-slate-900 shadow-md">
+                        </div>
+                        <div class="flex flex-col sm:flex-row justify-between mb-1.5">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Junior Software Developer
+                                </h3>
+                                <div class="text-primary font-medium text-base">6 Livo technologies Pvt.(ViTWO)</div>
+                            </div>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 h-fit mt-2 sm:mt-0">2025
+                                — Present</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs italic mb-3">Kolkata</p>
+                        <ul
+                            class="list-disc list-outside ml-4 space-y-1.5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed marker:text-primary">
+                            <li>Developing and maintaining ERP software using PHP, focusing on scalable backend
+                                architecture and business-critical modules.</li>
+                            <li>Designed and implemented secure RESTful CRM APIs using Laravel for customer management,
+                                lead tracking, and reporting.</li>
+                            <li>Integrated ERP and CRM systems to enable seamless data synchronization across
+                                departments.</li>
+                            <li>Optimized database queries and API performance, improving response times and system
+                                efficiency.</li>
+                            <li>Worked closely with frontend and QA teams to deliver reliable, production-ready
+                                features.</li>
+                        </ul>
+
+                    </div>
+                    <!-- Job 2 -->
+                    <div class="relative pl-8 md:pl-12 reveal delay-100">
+                        <div
+                            class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-slate-900">
+                        </div>
+                        <div class="flex flex-col sm:flex-row justify-between mb-1.5">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">PHP Developer Intern</h3>
+                                <div class="text-primary font-medium text-base">6 Livo technologies Pvt.(ViTWO)</div>
+                            </div>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 h-fit mt-2 sm:mt-0">2024
+                                — 2025</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs italic mb-3">Kolkata</p>
+                        <ul
+                            class="list-disc list-outside ml-4 space-y-1.5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed marker:text-primary">
+                            <li>Worked on ERP software development using core PHP, contributing to modules like
+                                inventory, billing, and user management.</li>
+                            <li>Assisted in developing and integrating CRM APIs using Laravel for customer data handling
+                                and workflow automation.</li>
+                            <li>Implemented backend logic, database queries, and basic RESTful APIs to support business
+                                operations.</li>
+                            <li>Collaborated with senior developers to debug issues, optimize code, and enhance system
+                                stability.</li>
+                        </ul>
+
+                    </div>
+                    <!-- Job 3 -->
+                    <!-- <div class="relative pl-8 md:pl-12 reveal delay-200">
+                        <div
+                            class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 ring-4 ring-white dark:ring-slate-900">
+                        </div>
+                        <div class="flex flex-col sm:flex-row justify-between mb-1.5">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Junior Web Developer</h3>
+                                <div class="text-primary font-medium text-base">StartUp Inc</div>
+                            </div>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 h-fit mt-2 sm:mt-0">2018
+                                — 2019</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-xs italic mb-3">Austin, TX</p>
+                        <ul
+                            class="list-disc list-outside ml-4 space-y-1.5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed marker:text-primary">
+                            <li>Built internal tools to automate reporting processes.</li>
+                            <li>Participated in daily stand-ups and code reviews.</li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div class="mt-10 text-center">
+                    <a href="#"
+                        class="magnetic inline-flex items-center text-primary font-semibold hover:underline text-sm">Download
+                        Full Resume <i data-lucide="download" class="w-3.5 h-3.5 ml-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog"
+            class="py-20 bg-slate-50 dark:bg-darker transition-colors duration-300 relative overflow-hidden">
+            <div
+                class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-purple-200/20 dark:bg-purple-900/10 rounded-full blur-3xl -z-10 pointer-events-none">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 reveal">
+                    <div class="mb-6 md:mb-0 text-center md:text-left w-full md:w-auto">
+                        <h2 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">Latest
+                            Thoughts</h2>
+                        <p class="mt-3 text-base text-slate-600 dark:text-slate-400">Insights on engineering, design,
+                            and career growth.</p>
+                    </div>
+                </div>
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="glass-card rounded-2xl p-8 md:p-10 text-center reveal border border-slate-100 dark:border-slate-800 shadow-xl relative overflow-hidden">
+                    <div
+                        class="absolute top-0 left-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl translate-x-1/2 translate-y-1/2">
+                    </div>
+                    <div class="relative z-10">
+                        <p class="text-primary font-bold tracking-wide uppercase text-xs mb-3">What's Next?</p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-5">Get In Touch</h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-xl mx-auto">Although I'm not
+                            currently looking for any new opportunities, my inbox is always open.</p>
+                        <form id="contact-form" class="max-w-md mx-auto text-left space-y-3 mb-10"
+                            name="submit-to-google-sheet">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div>
+                                    <label for="name"
+                                        class="block mb-1.5 text-xs font-medium text-slate-900 dark:text-white">Name</label>
+                                    <input type="text" id="name" name="Name"
+                                        class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-slate-950 dark:border-slate-700 dark:placeholder-slate-400 dark:text-white transition-colors"
+                                        placeholder="John Doe" required>
+                                </div>
+                                <div>
+                                    <label for="email"
+                                        class="block mb-1.5 text-xs font-medium text-slate-900 dark:text-white">Email</label>
+                                    <input type="email" id="email" name="Email"
+                                        class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-slate-950 dark:border-slate-700 dark:placeholder-slate-400 dark:text-white transition-colors"
+                                        placeholder="name@example.com" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message"
+                                    class="block mb-1.5 text-xs font-medium text-slate-900 dark:text-white">Message</label>
+                                <textarea id="message" name="Message" rows="4"
+                                    class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-primary focus:border-primary dark:bg-slate-950 dark:border-slate-700 dark:placeholder-slate-400 dark:text-white transition-colors"
+                                    placeholder="Leave a comment..." required></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn"
+                                class="magnetic w-full flex items-center justify-center gap-2 text-white bg-primary hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 transition-all shadow-lg hover:shadow-primary/30">
+
+                                <svg id="spinner" class="hidden w-4 h-4 animate-spin text-white"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                                </svg>
+
+                                <span id="btn-text">Send Message</span>
+                            </button>
+                            <p id="mssag" class="text-sm mt-2"></p>
+                        </form>
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://github.com/arpan9932" aria-label="GitHub Profile" target="_blank"
+                                class="magnetic text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"><i
+                                    data-lucide="github" class="w-5 h-5"></i></a>
+                            <a href="https://www.linkedin.com/in/arpan-bera-681a501b7/" aria-label="LinkedIn Profile"
+                                target="_blank"
+                                class="magnetic text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"><i
+                                    data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            <!-- <a href="https://twitter.com/arpan9932" aria-label="Twitter Profile"
+                                class="magnetic text-slate-400 hover:text-sky-500 dark:hover:text-sky-400 transition-colors"><i
+                                    data-lucide="twitter" class="w-5 h-5"></i></a> -->
+                            <a href="mailto:arpanbera7407@gmail.com" aria-label="Email Me" target="_blank"
+                                class="magnetic text-slate-400 hover:text-red-500 dark:hover:text-red-400 transition-colors"><i
+                                    data-lucide="mail" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-16 text-center border-t border-slate-200 dark:border-slate-800 pt-8">
+                <p class="text-xs text-slate-500 font-mono">Designed & Built by Arpan <br><span class="opacity-75">©
+                        2025 All rights reserved.</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast & Modals remain the same -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 flex items-center w-full max-w-xs p-4 space-x-4 text-slate-500 bg-white divide-x divide-slate-200 rounded-lg shadow-2xl dark:text-slate-400 dark:divide-slate-700 space-x dark:bg-slate-800 border border-slate-100 dark:border-slate-700 opacity-0 transform translate-y-10 transition-all duration-300 pointer-events-none z-50">
+        <div class="text-green-500"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
+        <div class="pl-4 text-sm font-normal">Message sent successfully!</div>
+    </div>
+    <div id="blog-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop">
+        </div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    id="modal-panel">
+                    <button type="button" onclick="closeModal()"
+                        class="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-all backdrop-blur-md"><i
+                            data-lucide="x" class="w-5 h-5"></i></button>
+                    <div class="relative h-48 sm:h-64 w-full overflow-hidden">
+                        <div id="modal-image-overlay"
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent z-10">
+                        </div>
+                        <div id="modal-image-bg"
+                            class="w-full h-full bg-cover bg-center transform transition-transform duration-1000"></div>
+                        <div class="absolute bottom-5 left-5 right-5 z-20">
+                            <span id="modal-category"
+                                class="inline-block px-2.5 py-0.5 mb-2 text-[10px] font-bold uppercase tracking-wide bg-primary text-white rounded-md shadow-lg">Category</span>
+                            <h3 id="modal-title"
+                                class="text-xl sm:text-2xl font-bold text-white leading-tight shadow-black drop-shadow-lg">
+                                Blog Title</h3>
+                            <div class="flex items-center text-xs text-slate-200 mt-2 space-x-3 font-mono">
+                                <span id="modal-date">Date</span><span>•</span><span id="modal-read-time">Read
+                                    Time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-5 py-6 sm:px-8 sm:py-8 bg-white dark:bg-slate-900">
+                        <div id="modal-content"
+                            class="prose prose-base prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-primary hover:prose-a:text-blue-600 prose-p:text-sm prose-li:text-sm">
+                        </div>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 px-5 py-3 sm:px-8 flex justify-between items-center border-t border-slate-100 dark:border-slate-800">
+                        <span class="text-xs text-slate-500 dark:text-slate-400">Thanks for reading!</span>
+                        <button type="button" onclick="closeModal()"
+                            class="inline-flex justify-center rounded-lg border border-transparent bg-slate-100 dark:bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors">Close
+                            Article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- SKILLS DATA (For Staggered Animation) ---
+        const skills = [
+            "Java", "PHP", "JavaScript", "Laravel",
+            "SQL", "NoSQL", "CSS", "AWS", "Python"
+        ];
+
+        const skillsContainer = document.getElementById('skills-container');
+        skills.forEach((skill, index) => {
+            const span = document.createElement('span');
+            span.className = "stagger-item px-3 py-1 text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm text-slate-700 dark:text-slate-300";
+            span.style.transitionDelay = `${index * 50}ms`; // Stagger delay
+            span.innerText = skill;
+            skillsContainer.appendChild(span);
+        });
+
+        // --- TYPEWRITER EFFECT ---
+        const roles = ["Software Developer", "Backend Enthusiast", "Open Source Contributor", "Problem Solver"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeSpeed = 80;
+        const deleteSpeed = 40;
+        const pause = 2000;
+
+        function typeWriter() {
+            const currentRole = roles[roleIndex];
+            const typingElement = document.getElementById('typewriter');
+
+            if (isDeleting) {
+                typingElement.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let nextSpeed = isDeleting ? deleteSpeed : typeSpeed;
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                nextSpeed = pause;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                nextSpeed = 500;
+            }
+
+            setTimeout(typeWriter, nextSpeed);
+        }
+        // Start Typewriter
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // --- 3D TILT EFFECT ---
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                // Calculate rotation (max 10 degrees)
+                const rotateX = ((y - centerY) / centerY) * -5;
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            });
+        });
+
+        // --- MAGNETIC BUTTON EFFECT ---
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Move button slightly towards mouse
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // --- MOUSE PARALLAX BACKGROUND ---
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            const blob1 = document.getElementById('blob-1');
+            const blob2 = document.getElementById('blob-2');
+            const blob3 = document.getElementById('blob-3');
+
+            if (blob1 && blob2 && blob3) {
+                blob1.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+                blob2.style.transform = `translate(${mouseX * -30}px, ${mouseY * -30}px)`;
+                blob3.style.transform = `translate(${mouseX * 15}px, ${mouseY * -15}px)`;
+            }
+        });
+
+        // --- BLOG DATA ---
+        const blogPosts = [
+            {
+                id: 1,
+                title: "The Future of Serverless Architecture in 2024",
+                date: "Dec 12, 2023",
+                readTime: "5 min read",
+                category: "Engineering",
+                color: "from-blue-400 to-indigo-600",
+                badgeColor: "bg-blue-600",
+                content: `
+                    <p class="lead font-medium">Serverless computing has revolutionized how we build and deploy applications. But as we move into 2024, the landscape is shifting once again.</p>
+                    <p>In this article, we'll explore the rise of edge computing and how it intersects with traditional serverless patterns. We'll look at cold start times, vendor lock-in concerns, and the emerging "Serverless V2" stack.</p>
+                    <h4 class="text-lg font-bold mt-4 mb-2">The Edge Advantage</h4>
+                    <p>Moving compute closer to the user isn't just a trend; it's a necessity for modern, high-performance web apps. Frameworks like Next.js and platforms like Vercel/Cloudflare are making this easier than ever.</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Reduced latency for global users</li>
+                        <li>Lower bandwidth costs</li>
+                        <li>Improved security posture</li>
+                    </ul>
+                    <p class="mt-4">Conclusion: The future is distributed, and serverless is leading the charge.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Building Accessible UI Components",
+                date: "Nov 28, 2023",
+                readTime: "8 min read",
+                category: "Design System",
+                color: "from-purple-400 to-pink-500",
+                badgeColor: "bg-purple-600",
+                content: `
+                    <p class="lead font-medium">Accessibility (a11y) isn't just a "nice to have"—it's a fundamental requirement for the open web.</p>
+                    <p>When building a design system, we often focus on aesthetics. However, semantic HTML and proper ARIA attributes are critical. Let's look at how to build a truly accessible Modal component in React.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "From Junior to Senior Engineer: The Missing Manual",
+                date: "Oct 15, 2023",
+                readTime: "4 min read",
+                category: "Career",
+                color: "from-emerald-400 to-teal-600",
+                badgeColor: "bg-emerald-600",
+                content: `
+                    <p class="lead font-medium">The jump from Junior to Senior isn't just about writing better code—it's about impact, mentorship, and ownership.</p>
+                    <p>I spent 5 years navigating this path, and here are the lessons I wish someone had told me earlier.</p>
+                `
+            }
+        ];
+
+        // --- Render Blog Grid ---
+        const blogGrid = document.getElementById('blog-grid');
+        blogPosts.forEach(post => {
+            const article = document.createElement('article');
+            article.className = "flex flex-col bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800 reveal group cursor-pointer h-full tilt-card";
+            article.setAttribute('data-tilt', ''); // Add tilt to blog cards too
+            article.onclick = () => openModal(post.id);
+
+            article.innerHTML = `
+                <div class="h-40 bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+                    <div class="absolute bottom-3 left-3 z-20">
+                        <span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${post.badgeColor} text-white rounded-md shadow-lg">${post.category}</span>
+                    </div>
+                    <div class="w-full h-full bg-gradient-to-br ${post.color} opacity-80 group-hover:scale-105 transition-transform duration-700"></div>
+                </div>
+                <div class="flex-1 p-5 flex flex-col">
+                    <div class="flex items-center text-[10px] text-slate-500 dark:text-slate-400 mb-2 space-x-2 font-mono">
+                        <span>${post.date}</span><span>•</span><span>${post.readTime}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">${post.title}</h3>
+                    <div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-3 flex-1 line-clamp-3">${post.content.replace(/<[^>]*>?/gm, '').substring(0, 150)}...</div>
+                    <span class="inline-flex items-center text-primary font-medium text-xs mt-auto group-hover:translate-x-1 transition-transform">Read Article <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i></span>
+                </div>
+            `;
+            blogGrid.appendChild(article);
+        });
+
+        // --- Modal & Scroll Reveal & Mobile Menu Logic (Same as before) ---
+        const modal = document.getElementById('blog-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalPanel = document.getElementById('modal-panel');
+        const body = document.body;
+
+        function openModal(id) {
+            const post = blogPosts.find(p => p.id === id);
+            if (!post) return;
+            document.getElementById('modal-category').innerText = post.category;
+            document.getElementById('modal-category').className = `inline-block px-2.5 py-0.5 mb-2 text-[10px] font-bold uppercase tracking-wide text-white rounded-md shadow-lg ${post.badgeColor}`;
+            document.getElementById('modal-title').innerText = post.title;
+            document.getElementById('modal-date').innerText = post.date;
+            document.getElementById('modal-read-time').innerText = post.readTime;
+            document.getElementById('modal-content').innerHTML = post.content;
+            document.getElementById('modal-image-bg').className = `w-full h-full bg-gradient-to-br ${post.color}`;
+            modal.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+            setTimeout(() => {
+                modalBackdrop.classList.remove('opacity-0');
+                modalPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+                modalPanel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalBackdrop.classList.add('opacity-0');
+            modalPanel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+            modalPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); body.style.overflow = 'auto'; }, 300);
+        }
+
+        modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('#modal-backdrop')) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); } else { html.classList.remove('dark'); }
+        themeToggleBtn.addEventListener('click', () => { html.classList.toggle('dark'); if (html.classList.contains('dark')) { localStorage.theme = 'dark'; } else { localStorage.theme = 'light'; } });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        menuBtn.addEventListener('click', () => { const isClosed = mobileMenu.classList.contains('translate-x-full'); if (isClosed) { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; } else { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = 'auto'; } });
+        mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = 'auto'; }); });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, observerOptions);
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzxOC9piuiVjg2YirflD1pzC7tWXjtssFJjbvy1g97-ddhkmZPirXxv5XGiRifSnU_M/exec'
+
+        const form = document.forms['submit-to-google-sheet'];
+        const message = document.getElementById('mssag');
+
+        const submitBtn = document.getElementById('submit-btn');
+        const spinner = document.getElementById('spinner');
+        const btnText = document.getElementById('btn-text');
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            spinner.classList.remove('hidden');
+            btnText.textContent = 'Sending...';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                body: new FormData(form)
+            })
+                .then(res => res.text())
+                .then(() => {
+                    if (message) {
+                        message.textContent = 'Message sent successfully!';
+                        message.className = 'text-green-600 text-sm mt-2';
+                    }
+                    form.reset();
+                })
+                .catch(err => {
+                    console.error(err);
+                    if (message) {
+                        message.textContent = 'Something went wrong. Please try again.';
+                        message.className = 'text-red-600 text-sm mt-2';
+                    }
+                })
+                .finally(() => {
+                    spinner.classList.add('hidden');
+                    btnText.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+
+                    setTimeout(() => {
+                        if (message) message.textContent = '';
+                    }, 4000);
+                });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
