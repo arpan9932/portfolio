@@ -113,6 +113,19 @@
     </script>
 
     <style>
+        #blog-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        #blog-grid::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 9999px;
+        }
+
+        .dark #blog-grid::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -485,9 +498,9 @@
                                         class="text-slate-400 hover:text-primary transition-colors"
                                         aria-label="View Source on GitHub"><i data-lucide="github"
                                             class="w-4 h-4"></i></a>
-                                    <!-- <a href="#" class="text-slate-400 hover:text-primary transition-colors"
+                                    <a href="apnakhata.42web.io" class="text-slate-400 hover:text-primary transition-colors"
                                         aria-label="Visit Live Site"><i data-lucide="external-link"
-                                            class="w-4 h-4"></i></a> -->
+                                            class="w-4 h-4"></i></a>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-2 mt-auto">
@@ -497,6 +510,8 @@
                                     class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Jquery</span>
                                 <span
                                     class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Mysql</span>
+                                <span
+                                    class="px-2 py-0.5 text-[10px] font-mono font-medium text-primary bg-primary/10 rounded">Oops</span>
                             </div>
                         </div>
                     </div>
@@ -753,7 +768,9 @@
                             and career growth.</p>
                     </div>
                 </div>
-                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="blog-grid" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
+                </div>
+
             </div>
         </section>
 
@@ -853,7 +870,7 @@
                 <div class="relative transform overflow-hidden rounded-xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     id="modal-panel">
                     <button type="button" onclick="closeModal()"
-                        class="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-all backdrop-blur-md"><i
+                        class="absolute top-4 right-4 z-20 p-1.5 rounded-full bg-white/50 dark:bg-black/50 hover:bg-white dark:hover:bg-black text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-all backdrop-blur-md"><i
                             data-lucide="x" class="w-5 h-5"></i></button>
                     <div class="relative h-48 sm:h-64 w-full overflow-hidden">
                         <div id="modal-image-overlay"
@@ -1004,58 +1021,183 @@
         const blogPosts = [
             {
                 id: 1,
-                title: "The Future of Serverless Architecture in 2024",
-                date: "Dec 12, 2023",
-                readTime: "5 min read",
-                category: "Engineering",
-                color: "from-blue-400 to-indigo-600",
-                badgeColor: "bg-blue-600",
+                title: "Designing Scalable ERP Systems with PHP in 2025",
+                date: "Mar 05, 2025",
+                readTime: "6 min read",
+                category: "ERP",
+                color: "from-cyan-400 to-blue-600",
+                badgeColor: "bg-cyan-600",
                 content: `
-                    <p class="lead font-medium">Serverless computing has revolutionized how we build and deploy applications. But as we move into 2024, the landscape is shifting once again.</p>
-                    <p>In this article, we'll explore the rise of edge computing and how it intersects with traditional serverless patterns. We'll look at cold start times, vendor lock-in concerns, and the emerging "Serverless V2" stack.</p>
-                    <h4 class="text-lg font-bold mt-4 mb-2">The Edge Advantage</h4>
-                    <p>Moving compute closer to the user isn't just a trend; it's a necessity for modern, high-performance web apps. Frameworks like Next.js and platforms like Vercel/Cloudflare are making this easier than ever.</p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1">
-                        <li>Reduced latency for global users</li>
-                        <li>Lower bandwidth costs</li>
-                        <li>Improved security posture</li>
-                    </ul>
-                    <p class="mt-4">Conclusion: The future is distributed, and serverless is leading the charge.</p>
-                `
+      <p class="lead font-medium">
+        ERP systems form the backbone of enterprise operations, handling finance,
+        inventory, HR, and reporting at scale.
+      </p>
+      <p>
+        In this article, I discuss how to design scalable ERP systems using PHP by
+        focusing on modular architecture, clean database design, and performance optimization.
+      </p>
+      <h4 class="text-lg font-bold mt-4 mb-2">Key Design Principles</h4>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>Module-based architecture for maintainability</li>
+        <li>Role-based access control (RBAC)</li>
+        <li>Optimized queries and indexing</li>
+      </ul>
+      <p class="mt-4">
+        A scalable ERP is built for change, not just for today’s requirements.
+      </p>
+    `
             },
+
             {
                 id: 2,
-                title: "Building Accessible UI Components",
-                date: "Nov 28, 2023",
-                readTime: "8 min read",
-                category: "Design System",
-                color: "from-purple-400 to-pink-500",
-                badgeColor: "bg-purple-600",
+                title: "API-First CRM Development with Laravel",
+                date: "Feb 20, 2025",
+                readTime: "7 min read",
+                category: "CRM",
+                color: "from-indigo-400 to-purple-600",
+                badgeColor: "bg-indigo-600",
                 content: `
-                    <p class="lead font-medium">Accessibility (a11y) isn't just a "nice to have"—it's a fundamental requirement for the open web.</p>
-                    <p>When building a design system, we often focus on aesthetics. However, semantic HTML and proper ARIA attributes are critical. Let's look at how to build a truly accessible Modal component in React.</p>
-                `
+      <p class="lead font-medium">
+        Modern CRM systems rely on APIs to integrate sales, marketing,
+        and customer support platforms.
+      </p>
+      <p>
+        This blog explains how to build API-first CRM systems using Laravel,
+        focusing on authentication, validation, and clean RESTful design.
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Laravel Sanctum / JWT authentication</li>
+        <li>API versioning strategies</li>
+        <li>Secure customer data handling</li>
+      </ul>
+      <p class="mt-4">
+        A strong API foundation ensures your CRM scales with business growth.
+      </p>
+    `
             },
+
             {
                 id: 3,
-                title: "From Junior to Senior Engineer: The Missing Manual",
-                date: "Oct 15, 2023",
+                title: "Laravel Best Practices for Enterprise Applications",
+                date: "Jan 28, 2025",
+                readTime: "8 min read",
+                category: "Laravel",
+                color: "from-red-400 to-rose-600",
+                badgeColor: "bg-red-600",
+                content: `
+      <p class="lead font-medium">
+        Laravel is widely used for enterprise-grade applications, but
+        poor structure can quickly lead to technical debt.
+      </p>
+      <p>
+        In this article, I share best practices for building large-scale
+        Laravel applications used in ERP and CRM systems.
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Service layer & clean architecture</li>
+        <li>Queues and background jobs</li>
+        <li>Database optimization & caching</li>
+      </ul>
+      <p class="mt-4">
+        Clean architecture keeps Laravel applications maintainable long-term.
+      </p>
+    `
+            },
+
+            {
+                id: 4,
+                title: "Spring Boot Microservices for ERP & CRM Platforms",
+                date: "Jan 10, 2025",
+                readTime: "7 min read",
+                category: "Spring Boot",
+                color: "from-green-400 to-emerald-600",
+                badgeColor: "bg-green-600",
+                content: `
+      <p class="lead font-medium">
+        Spring Boot is a popular choice for building enterprise
+        microservices powering ERP and CRM platforms.
+      </p>
+      <p>
+        This blog explores how Spring Boot microservices can be designed
+        for scalability, resilience, and seamless system integration.
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Microservices vs monolith architecture</li>
+        <li>Service discovery and API gateways</li>
+        <li>Database-per-service pattern</li>
+      </ul>
+      <p class="mt-4">
+        Microservices add flexibility—but only with careful design.
+      </p>
+    `
+            },
+
+            {
+                id: 5,
+                title: "Event-Driven Architecture in ERP & CRM Systems",
+                date: "Dec 18, 2024",
+                readTime: "6 min read",
+                category: "Architecture",
+                color: "from-yellow-400 to-orange-600",
+                badgeColor: "bg-yellow-600",
+                content: `
+      <p class="lead font-medium">
+        As ERP and CRM platforms grow, synchronous processing
+        can become a serious bottleneck.
+      </p>
+      <p>
+        This article introduces event-driven architecture and explains
+        how message queues and events improve scalability and reliability.
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Async workflows for heavy operations</li>
+        <li>Using queues for background processing</li>
+        <li>Real-world ERP & CRM use cases</li>
+      </ul>
+      <p class="mt-4">
+        Event-driven systems enable faster and more resilient platforms.
+      </p>
+    `
+            },
+
+            {
+                id: 6,
+                title: "From Intern to Full-Time Developer: Lessons from Real Projects",
+                date: "Dec 02, 2024",
                 readTime: "4 min read",
                 category: "Career",
                 color: "from-emerald-400 to-teal-600",
                 badgeColor: "bg-emerald-600",
                 content: `
-                    <p class="lead font-medium">The jump from Junior to Senior isn't just about writing better code—it's about impact, mentorship, and ownership.</p>
-                    <p>I spent 5 years navigating this path, and here are the lessons I wish someone had told me earlier.</p>
-                `
+      <p class="lead font-medium">
+        Moving from an intern role to a full-time developer
+        brings new responsibilities and expectations.
+      </p>
+      <p>
+        Based on my experience working on ERP software and CRM APIs,
+        this post shares lessons that helped me grow professionally.
+      </p>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Writing production-ready code</li>
+        <li>Understanding business logic</li>
+        <li>Taking ownership of features</li>
+      </ul>
+      <p class="mt-4">
+        Growth happens when learning meets responsibility.
+      </p>
+    `
             }
         ];
+
 
         // --- Render Blog Grid ---
         const blogGrid = document.getElementById('blog-grid');
         blogPosts.forEach(post => {
             const article = document.createElement('article');
-            article.className = "flex flex-col bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800 reveal group cursor-pointer h-full tilt-card";
+            article.className =
+                "flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] lg:w-[calc(33.333%-1rem)]bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800 reveal group cursor-pointer tilt-card snap-start";
+
+
             article.setAttribute('data-tilt', ''); // Add tilt to blog cards too
             article.onclick = () => openModal(post.id);
 
@@ -1107,9 +1249,14 @@
         function closeModal() {
             modalBackdrop.classList.add('opacity-0');
             modalPanel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
-            modalPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
-            setTimeout(() => { modal.classList.add('hidden'); body.style.overflow = 'auto'; }, 300);
+            modalPanel.classList.add('opacity-0', 'translate-y-4', 'sm:scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
         }
+        modalBackdrop.addEventListener('click', closeModal);
 
         modal.addEventListener('click', (e) => { if (e.target === modal || e.target.closest('#modal-backdrop')) closeModal(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
